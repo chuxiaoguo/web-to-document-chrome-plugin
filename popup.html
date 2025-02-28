@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web to Document Converter</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .pdf-button {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .word-button {
+      background-color: #2196F3;
+      color: white;
+    }
+    .txt-button {
+      background-color: #9E9E9E;
+      color: white;
+    }
+    .markdown-button {
+      background-color: #FF5722;
+      color: white;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .toast {
+      position: relative;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      border-radius: 4px;
+      color: black;
+      font-size: 14px;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+    }
+    .toast-success {
+      background-color: #4CAF50;
+    }
+    .toast-error {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button class="pdf-button" id="convertToPdf">转换为PDF</button>
+    <button class="word-button" id="convertToWord">转换为Word</button>
+    <button class="txt-button" id="convertToTxt">转换为TXT</button>
+    <button class="markdown-button" id="convertToMarkdown">转换为Markdown</button>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

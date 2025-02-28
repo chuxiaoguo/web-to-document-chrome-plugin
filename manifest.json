@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Web to Document Converter",
+  "version": "1.0",
+  "description": "将网页转换为Word或PDF格式文档",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "lib/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

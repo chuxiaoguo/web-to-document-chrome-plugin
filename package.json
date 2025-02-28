@@ -1,0 +1,21 @@
+{
+  "name": "web-to-pdf-chrome-plugin",
+  "version": "1.0.0",
+  "description": "将网页转换为Word或PDF格式文档",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "dependencies": {
+    "html2pdf.js": "^0.10.1",
+    "html-docx-js": "^0.3.1",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "@crxjs/vite-plugin": "^2.0.0-beta.18"
+  }
+}
