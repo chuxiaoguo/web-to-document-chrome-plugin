@@ -2,24 +2,47 @@
 
 ## 项目简介
 这是一个Chrome浏览器插件，可以将网页内容转换为PDF、Word等格式的文档。
+![page to docs](./docs-image/popup.png)
 
 ## 功能特点
 
-- 支持将网页转换为PDF格式
+- 支持将网页转换为PDF、Word、TXT、Markdown格式
 - 界面简洁美观
 - 操作便捷
 
-## 环境要求
+## 使用方法
+
+1. 点击Chrome工具栏中的插件图标
+2. 在弹出的界面中选择要转换的格式（PDF、Word、TXT、Markdown）
+3. 等待转换完成，文件将自动下载到您的默认下载目录
+注意⚠️：若是已经打开过的页面，需要重新刷新下页面
+
+## 直接使用
+1. 从GitHub Release下载资源包：
+   - 访问项目的[GitHub Release页面](https://github.com/chuxiaoguo/web-to-document-chrome-plugin/releases)
+   - 选择需要的版本（例如：v1.0.5）
+   - 下载对应版本的zip资源包（web-to-docs-v1.0.5.zip）
+   - 解压文件
+
+2. 在Chrome浏览器中加载插件：
+   - 打开Chrome浏览器，进入扩展程序页面（chrome://extensions/）
+   - 开启右上角的"开发者模式"
+   - 点击"加载已解压的扩展程序"
+   - 选择release资源包解压后的文件夹
+  
+## 自行编译
+
+### 环境要求
 
 - Node.js (推荐 v14 或更高版本)
 - npm 或 yarn 包管理器
 - Chrome 浏览器
 
-## 开发环境配置
+### 开发环境配置
 
 1. 克隆项目到本地：
 ```bash
-git clone [项目地址]
+git clone git@github.com:chuxiaoguo/web-to-document-chrome-plugin.git
 cd web-to-pdf-chrome-plugin
 ```
 
@@ -30,7 +53,7 @@ npm install
 yarn install
 ```
 
-## 开发流程
+### 开发流程
 
 1. 启动开发模式（支持实时构建）：
 ```bash
@@ -39,38 +62,7 @@ npm run watch
 yarn watch
 ```
 
-2. 在Chrome浏览器中加载插件：
-   - 打开Chrome浏览器，进入扩展程序页面（chrome://extensions/）
-   - 开启右上角的"开发者模式"
-   - 点击"加载已解压的扩展程序"
-   - 选择项目目录中的 `dist` 文件夹
-
-## 使用方法
-
-1. 点击Chrome工具栏中的插件图标
-2. 在弹出的界面中选择要转换的格式（PDF）
-3. 等待转换完成，文件将自动下载到您的默认下载目录
-
-## 项目结构
-
-```
-├── content.js      # 注入到网页的内容脚本
-├── icons/          # 插件图标
-├── lib/            # 第三方库
-├── manifest.json   # 插件配置文件
-├── popup.html      # 弹出窗口HTML
-├── popup.js        # 弹出窗口逻辑
-└── vite.config.js  # Vite配置文件
-```
-
-## 技术栈
-
-- Vite - 构建工具
-- html2pdf.js - PDF转换库
-- html-docx-js - Word文档转换库
-- @crxjs/vite-plugin - Chrome插件开发支持
-
-## 打包发布
+### 打包发布
 
 1. 构建生产版本：
 ```bash
@@ -79,12 +71,28 @@ npm run build
 yarn build
 ```
 
-2. 生产版本文件将会生成在 `dist` 目录中
+### 项目结构
+
+```
+├── content.js      # 注入到网页的内容脚本
+├── icons/          # 插件图标
+├── lib/            # 第三方库
+├── manifest.json   # 插件配置文件
+├── popup.html      # 弹出窗口HTML
+├── popup.js        # 弹出窗口逻辑
+├── release/        # 发布的资源包
+└── vite.config.js  # Vite配置文件
+```
+
+### 技术栈
+
+- Vite - 构建工具
+- html2pdf.js - PDF转换库
+- html-docx-js - Word文档转换库
 
 ## 注意事项
 
 - 确保在开发时运行 `npm run watch` 或 `yarn watch` 以启用实时构建
-- 修改代码后需要在Chrome扩展管理页面点击刷新按钮来更新插件
 - 首次加载或更新插件后可能需要刷新目标网页才能生效
 - 转换大型网页时可能需要等待较长时间，请耐心等待
 - 某些网站可能会限制内容访问或脚本执行，可能会影响转换效果
